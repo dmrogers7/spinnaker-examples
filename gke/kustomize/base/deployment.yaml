@@ -2,14 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: gke-kustomize
-  labels:
-    app: gke-kustomize
 spec:
   replicas: 0
   selector:
     matchLabels:
       app: gke-kustomize
   template:
+    metadata:
+      labels:
+        app: gke-kustomize
     spec:
       containers:
         - name: hello
